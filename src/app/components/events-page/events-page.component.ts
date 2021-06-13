@@ -10,16 +10,24 @@ export class EventsPageComponent implements OnInit {
   constructor(private evnt: EventService) { }
 
   eventsData:any;
-
+  eventTagsData:any;
   ngOnInit() {
    this.getEventList();
+   this.getEvntTags();
   }
 
   getEventList(){
     this.evnt.getEventsList().subscribe(res=>{
-      debugger;
+
       console.log(res);
       this.eventsData = res.data.events
+    })
+  }
+
+  getEvntTags(){
+    this.evnt.getEventTags().subscribe(res=>{
+      console.log(res);
+      this.eventTagsData = res.data.tags
     })
   }
 

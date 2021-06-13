@@ -24,7 +24,7 @@ getEventsList():Observable<any>{
   return this.http.get(this.eventListUrl,{params: params})
 }
 
-getEventTags(){
+getEventTags():Observable<any>{
   return this.http.get(this.eventTagsUrl)
 }
 }
