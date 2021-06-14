@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LllComponent } from './lll.component';
+import { AlltimeFavComponent } from './alltime-fav.component';
 
-describe('LllComponent', () => {
-  let component: LllComponent;
-  let fixture: ComponentFixture<LllComponent>;
+describe('AlltimeFavComponent', () => {
+  let component: AlltimeFavComponent;
+  let fixture: ComponentFixture<AlltimeFavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LllComponent ]
+      declarations: [ AlltimeFavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LllComponent);
+    fixture = TestBed.createComponent(AlltimeFavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

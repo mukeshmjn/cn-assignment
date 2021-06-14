@@ -1,113 +1,36 @@
 <div class="outer ">
     <mat-card class="example-card">
-        <mat-tab-group mat-align-tabs="center">
-            <mat-tab label="All Events"> 
-                <mat-tab-group>
-                    <mat-tab label="Upcoming row"> 
-                      <div class="row container">
+        <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="tabChange($event)" [selectedIndex]="selectedIndex" >
+            <mat-tab label="All Events" > 
+                <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
+                    <mat-tab label="Upcoming row" > 
+                      <app-upcoming  *ngIf="subtabIndex==0"> 
+                        </app-upcoming>
+                    </mat-tab>
+                    <mat-tab label="Archived" >
+                  <app-archived *ngIf="subtabIndex==1">
 
-                        <div class="col-10">
-                          <div class="row container">
-                          <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;">
-                            <!-- <mat-card-header>
-                              <div mat-card-avatar class="example-header-image"></div>
-                              <mat-card-title>Shiba Inu</mat-card-title>
-                              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                            </mat-card-header> -->
-                            <img mat-card-image src="{{event.cover_picture}}" alt="Photo of a Shiba Inu" >
-                            <mat-card-content>
-                              <p>
-                             <strong>  {{event.name}}
-                            </strong> 
-                              </p>
-                              <div class="row" style="color: #757575;">
-                                <div class="col-4">
-                                  Starts On
-                                </div>
-                                <div class="col-4">
-                                  Entry Fee
-                                </div>
-                                <div class="col-4">
-                                  Venue
-                                </div>
-                              </div>
-                              <div class="row" style="color: black;">
-                                <div class="col-4">
-                                  {{event.start_time|date: ' h:mm a, d MMM y'}}
-                                </div>
-                                <div class="col-4">
-                                  {{event.currency}} {{event.fees}}
-                                </div>
-                                <div class="col-4">
-                                  {{event.venue}}
-                                </div>
-                              
-                              </div>
-                          
-                                <mat-divider ></mat-divider>
-                      
-                              
-                              <div class="row shortdesc p-2">
-                                {{event.short_desc}}
-                              </div>
-                              <div class="row">
-                                <div class="col-4  m-1" style="background-color: #eee;color: #616161;font-size: 12px;    width: auto" *ngFor="let ev of event.card_tags">
-                                  {{ev}}
-                                </div>
-                              </div>
-                              <mat-divider ></mat-divider>
-                              <div style="margin-top: 15px;">
-                                <div class="float-left" style="float: left;">
-                                  <img src="{{img.image_url}}" alt="NA" *ngFor=" let img of event.registered_users.top_users" [hidden]="!img.image_url" style="    border: 1px solid #fff;
-                                  width: 22px;
-                                  height: 22px;
-                                  border-radius: 50%;">
-                                     </div>
-                                     <div class="float-right" style="float: right;">
-                                       <img src="assets/reg-btn.png" alt="fdd" style="height: 30px;margin-right: -17px;
-                                     ">
-                                     </div>
-                              </div>
-                         <br>
-                         <br>
-                              <div class="col-4" *ngIf="event.registered_users.show_users_count" style="text-align: left;">
-                                and {{event.registered_users.other_users_count}} others registered
-                              </div>
-                             
-                            </mat-card-content>
-                            <!-- <mat-card-actions>
-                              <button mat-button>LIKE</button>
-                              <button mat-button>SHARE</button>
-                            </mat-card-actions> -->
-                          </mat-card> 
-                        </div>
-                        </div>
-                        
-                    <div class="col-2 ">
-                      <div class="tags-heading m-2">
-                        <span>
-                          TAGS
-                        </span>
-                      </div>
-                     <div class="row " *ngFor="let tag of eventTagsData;index as i" (click)="showOrangeorN(i)" [ngClass]="showOrange[i] ? 'event-tags-orange' : 'event-tags-grey'">
-                      {{tag}}
-                     </div>
-                    </div>
-                       
-                        </div>   
-           
+                  </app-archived>
                     </mat-tab>
-                    <mat-tab label="Archived"> 
-                      <app-lll></app-lll>
+                    <mat-tab label="All Time Favorites" > 
+                    <app-alltime-fav *ngIf="subtabIndex==2"></app-alltime-fav>  
                     </mat-tab>
-                    <mat-tab label="All Time Favorites"> Content 3 </mat-tab>
                   </mat-tab-group>
              </mat-tab>
-            <mat-tab label="Webinars">
-                <mat-tab-group>
-                    <mat-tab label="First"> Content 1 </mat-tab>
-                    <mat-tab label="Second"> Content 2 </mat-tab>
-                    <mat-tab label="Third"> Content 3 </mat-tab>
+            <mat-tab label="Webinars" >
+                <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
+                  <mat-tab label="Upcoming row" > 
+                    <app-webi-upcoming *ngIf="subtabIndex==0"> 
+                      </app-webi-upcoming>
+                  </mat-tab>
+                  <mat-tab label="Archived" > 
+                <app-webi-archived *ngIf="subtabIndex==1">
+
+                </app-webi-archived>
+                  </mat-tab>
+                  <mat-tab label="All Time Favorites"> 
+                  <app-webi-alltime-fav  *ngIf="subtabIndex==2"></app-webi-alltime-fav>  
+                  </mat-tab>
                   </mat-tab-group>
                  </mat-tab>
             <mat-tab label="Coding Events">
@@ -143,5 +66,5 @@
 
 
 
-
+<!-- <button (click)="test()">testU</button> -->
 <ngx-spinner></ngx-spinner>

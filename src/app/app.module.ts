@@ -11,13 +11,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
-import { LllComponent } from './components/lll/lll.component';
+
 import { NgxSpinnerModule } from "ngx-spinner";
+import { UpcomingComponent } from './components/all-events/upcoming/upcoming.component';
+import { ArchivedComponent } from './components/all-events/archived/archived.component';
+import { AlltimeFavComponent } from './components/all-events/alltime-fav/alltime-fav.component';
+import { WebiAlltimeFavComponent } from './components/webinars/webi-alltime-fav/webi-alltime-fav.component';
+import { WebiArchivedComponent } from './components/webinars/webi-archived/webi-archived.component';
+import { WebiUpcomingComponent } from './components/webinars/webi-upcoming/webi-upcoming.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     EventsPageComponent,
-    LllComponent
+    UpcomingComponent,
+    ArchivedComponent,
+    AlltimeFavComponent,
+    WebiAlltimeFavComponent,
+    WebiArchivedComponent,
+    WebiUpcomingComponent,
+  
+
   ],
   imports: [
     BrowserModule,

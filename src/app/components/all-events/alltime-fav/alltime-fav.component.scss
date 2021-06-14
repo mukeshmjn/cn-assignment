@@ -19,7 +19,11 @@ body{
     color: #616161;
     margin-bottom: 14px;
 }
-
+.example-card {
+    max-width: 90%;
+    margin: auto;
+    cursor: pointer;
+  }
 .event-tags-grey{
     color: #424242;
     font-size: 14px;
@@ -45,3 +49,4 @@ body{
     cursor: pointer;
     text-decoration: none;
 }
+

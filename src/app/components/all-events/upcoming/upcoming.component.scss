@@ -22,7 +22,7 @@ body{
 .example-card {
     max-width: 90%;
     margin: auto;
-   
+    cursor: pointer;
   }
 .event-tags-grey{
     color: #424242;
@@ -48,5 +48,13 @@ body{
     background: #fa7328;
     cursor: pointer;
     text-decoration: none;
+}
+
+.no-data{
+    text-align: center;
+    font-weight: 700;
+    font-size:24px;
+    margin-top: 20px;
+
 }
 
