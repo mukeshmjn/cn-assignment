@@ -1,5 +1,5 @@
 <div class="outer ">
-    <mat-card>
+    <mat-card class="example-card">
         <mat-tab-group mat-align-tabs="center">
             <mat-tab label="All Events"> 
                 <mat-tab-group>
@@ -58,7 +58,7 @@
                               <mat-divider ></mat-divider>
                               <div style="margin-top: 15px;">
                                 <div class="float-left" style="float: left;">
-                                  <img src="{{img.image_url}}" alt="NA" *ngFor=" let img of event.registered_users.top_users" style="    border: 1px solid #fff;
+                                  <img src="{{img.image_url}}" alt="NA" *ngFor=" let img of event.registered_users.top_users" [hidden]="!img.image_url" style="    border: 1px solid #fff;
                                   width: 22px;
                                   height: 22px;
                                   border-radius: 50%;">
@@ -68,7 +68,9 @@
                                      ">
                                      </div>
                               </div>
-                              <div class="col-5" *ngIf="event.registered_users.show_users_count">
+                         <br>
+                         <br>
+                              <div class="col-4" *ngIf="event.registered_users.show_users_count" style="text-align: left;">
                                 and {{event.registered_users.other_users_count}} others registered
                               </div>
                              
@@ -87,7 +89,7 @@
                           TAGS
                         </span>
                       </div>
-                     <div class="row event-tags" *ngFor="let tag of eventTagsData">
+                     <div class="row " *ngFor="let tag of eventTagsData;index as i" (click)="showOrangeorN(i)" [ngClass]="showOrange[i] ? 'event-tags-orange' : 'event-tags-grey'">
                       {{tag}}
                      </div>
                     </div>
@@ -95,7 +97,9 @@
                         </div>   
            
                     </mat-tab>
-                    <mat-tab label="Archived"> Content 2 </mat-tab>
+                    <mat-tab label="Archived"> 
+                      <app-lll></app-lll>
+                    </mat-tab>
                     <mat-tab label="All Time Favorites"> Content 3 </mat-tab>
                   </mat-tab-group>
              </mat-tab>
@@ -131,3 +135,13 @@
     </mat-card>
 </div>
 
+
+
+
+
+
+
+
+
+
+<ngx-spinner></ngx-spinner>

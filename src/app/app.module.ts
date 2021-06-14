@@ -11,10 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
+import { LllComponent } from './components/lll/lll.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [
     AppComponent,
-    EventsPageComponent
+    EventsPageComponent,
+    LllComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import {MatDividerModule} from '@angular/material/divider';
     FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
