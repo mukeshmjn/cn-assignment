@@ -16,10 +16,13 @@ export class ArchivedComponent implements OnInit {
     private router: Router
     ) { }
     tags:any;
-  eventsData:any;
-  eventTagsData:any;
-  eventsPayload:any=[];
-  showOrange:boolean[] =[false]
+    eventsData:any;
+    offset:number = 0
+    eventTagsData:any;
+    eventsPayload:any=[];
+    currpage:any=1;
+    pageCount:any;
+    showOrange:boolean[] =[false]
 
   ngOnInit() {
     debugger
@@ -46,6 +49,7 @@ debugger
       
    
       this.eventsData = res.data.events
+      this.pageCount = res.data.page_count;
     })
   }
 
@@ -99,5 +103,38 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
     debugger
   }
 
+  pageUp(){
+    debugger
+    this.currpage+=1;
+    this.offset+=20;
+    this.getEventList1();
+  }
+
+  pageDown(){
+    this.currpage-=1;
+    this.offset-=20;
+    
+    this.getEventList1();
+  }
+
+  manualInput(){
+    if(this.currpage>1){
+      this.offset = (this.currpage-1) * 20;
+      this.getEventList1();
+    }
+    
+  }
+
+  getEventList1(){
+    debugger
+    
+        this.evnt.getEventsList1('ALL_EVENTS','Archived',this.tags,this.offset).subscribe(res=>{
+          
+       
+          this.eventsData = res.data.events;
+          this.pageCount = res.data.page_count;
+          console.log('pg count: ',this.pageCount)
+        })
+      }
 
 }

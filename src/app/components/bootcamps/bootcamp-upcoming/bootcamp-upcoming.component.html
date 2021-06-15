@@ -78,7 +78,22 @@
           <button mat-button>LIKE</button>
           <button mat-button>SHARE</button>
         </mat-card-actions> -->
+
       </mat-card> 
+      <div >
+        <button mat-raised-button color="primary" class="col-1" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" >chevron_right</mat-icon></button>
+          <!-- <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field> -->
+          <input type="text" class="form-control col-2" placeholder="pageno" [(ngModel)]="currpage" (change)="manualInput()" [disabled]="currpage==1||currpage==pageCount" aria-label="pageno" aria-describedby="basic-addon1" style="width: 10%;float: right;">
+          <button mat-raised-button color="primary" class="col-1" style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">chevron_left</mat-icon></button>
+      </div>
+     
     </div>
     </div>
     
@@ -90,7 +105,9 @@
   </div>
  <div class="row " *ngFor="let tag of eventTagsData;index as i" (click)="showOrangeorN(i)" [ngClass]="showOrange[i] ? 'event-tags-orange' : 'event-tags-grey'">
   {{tag}}
+
  </div>
 </div>
    
     </div>   
+

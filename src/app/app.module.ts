@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsPageComponent } from './components/events-page/events-page.component';
@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { UpcomingComponent } from './components/all-events/upcoming/upcoming.component';
 import { ArchivedComponent } from './components/all-events/archived/archived.component';
@@ -28,7 +29,7 @@ import { BootcampAlltimeFavComponent } from './components/bootcamps/bootcamp-all
 import { WorkshopArchivedComponent } from './components/workshops/workshop-archived/workshop-archived.component';
 import { WorkshopAlltimeFavComponent } from './components/workshops/workshop-alltime-fav/workshop-alltime-fav.component';
 import { WorkshopUpcomingComponent } from './components/workshops/workshop-upcoming/workshop-upcoming.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,11 +57,16 @@ import { WorkshopUpcomingComponent } from './components/workshops/workshop-upcom
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
     MatDividerModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

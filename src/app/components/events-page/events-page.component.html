@@ -68,8 +68,8 @@
                      <mat-tab label="Workshop">
                       <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                         <mat-tab label="Upcoming row" > 
-                          <app-bootcamp-upcoming *ngIf="subtabIndex==0"> 
-                            </app-bootcamp-upcoming>
+                          <app-workshop-upcoming *ngIf="subtabIndex==0"> 
+                            </app-workshop-upcoming>
                         </mat-tab>
                         <mat-tab label="Archived" > 
                       <app-workshop-archived *ngIf="subtabIndex==1">

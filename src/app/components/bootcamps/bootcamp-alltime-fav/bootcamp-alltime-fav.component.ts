@@ -17,10 +17,13 @@ export class BootcampAlltimeFavComponent implements OnInit {
     private router: Router
     ) { }
     tags:any;
-  eventsData:any;
-  eventTagsData:any;
-  eventsPayload:any=[];
-  showOrange:boolean[] =[false]
+    eventsData:any;
+    offset:number = 0
+    eventTagsData:any;
+    eventsPayload:any=[];
+    currpage:any=1;
+    pageCount:any;
+    showOrange:boolean[] =[false]
 
   ngOnInit() {
     debugger
@@ -44,7 +47,7 @@ export class BootcampAlltimeFavComponent implements OnInit {
 debugger
 
     this.evnt.getEventsList('BOOTCAMP_EVENT','All Time Favorites',this.tags).subscribe(res=>{
-      
+      this.pageCount = res.data.page_count;
    
       this.eventsData = res.data.events
     })
@@ -99,4 +102,42 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   tabChange(event){
     debugger
   }
+
+  
+  pageUp(){
+    debugger
+    this.currpage+=1;
+    this.offset+=20;
+    this.getEventList1();
+  }
+
+  pageDown(){
+    this.currpage-=1;
+    this.offset-=20;
+    
+    this.getEventList1();
+  }
+
+  manualInput(){
+    if(this.currpage>1){
+      this.offset = (this.currpage-1) * 20;
+      this.getEventList1();
+    }
+    
+  }
+
+  getEventList1(){
+    debugger
+    
+        this.evnt.getEventsList1('BOOTCAMP_EVENT','All Time Favorites',this.tags,this.offset).subscribe(res=>{
+          
+       
+          this.eventsData = res.data.events;
+          this.pageCount = res.data.page_count;
+          console.log('pg count: ',this.pageCount)
+        })
+      }
+    
+
+
 }
