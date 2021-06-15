@@ -4,11 +4,11 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute,Router } from '@angular/router';
 import { JsonpClientBackend } from '@angular/common/http';
 @Component({
-  selector: 'app-archived',
-  templateUrl: './archived.component.html',
-  styleUrls: ['./archived.component.scss']
+  selector: 'app-ce-upcoming',
+  templateUrl: './ce-upcoming.component.html',
+  styleUrls: ['./ce-upcoming.component.scss']
 })
-export class ArchivedComponent implements OnInit {
+export class CeUpcomingComponent implements OnInit {
 
   constructor(private evnt: EventService,
     private lodr: NgxSpinnerService,
@@ -42,7 +42,7 @@ export class ArchivedComponent implements OnInit {
   getEventList(){
 debugger
 
-    this.evnt.getEventsList('ALL_EVENTS','Archived',this.tags).subscribe(res=>{
+    this.evnt.getEventsList('CODING_EVENT','Upcoming',this.tags).subscribe(res=>{
       
    
       this.eventsData = res.data.events

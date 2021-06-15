@@ -19,6 +19,15 @@ import { AlltimeFavComponent } from './components/all-events/alltime-fav/alltime
 import { WebiAlltimeFavComponent } from './components/webinars/webi-alltime-fav/webi-alltime-fav.component';
 import { WebiArchivedComponent } from './components/webinars/webi-archived/webi-archived.component';
 import { WebiUpcomingComponent } from './components/webinars/webi-upcoming/webi-upcoming.component';
+import { CeUpcomingComponent } from './components/coding-events/ce-upcoming/ce-upcoming.component';
+import { CeAlltimeFavComponent } from './components/coding-events/ce-alltime-fav/ce-alltime-fav.component';
+import { CeArchivedComponent } from './components/coding-events/ce-archived/ce-archived.component';
+import { BootcampUpcomingComponent } from './components/bootcamps/bootcamp-upcoming/bootcamp-upcoming.component';
+import { BootcampArchivedComponent } from './components/bootcamps/bootcamp-archived/bootcamp-archived.component';
+import { BootcampAlltimeFavComponent } from './components/bootcamps/bootcamp-alltime-fav/bootcamp-alltime-fav.component';
+import { WorkshopArchivedComponent } from './components/workshops/workshop-archived/workshop-archived.component';
+import { WorkshopAlltimeFavComponent } from './components/workshops/workshop-alltime-fav/workshop-alltime-fav.component';
+import { WorkshopUpcomingComponent } from './components/workshops/workshop-upcoming/workshop-upcoming.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +39,15 @@ import { WebiUpcomingComponent } from './components/webinars/webi-upcoming/webi-
     WebiAlltimeFavComponent,
     WebiArchivedComponent,
     WebiUpcomingComponent,
+    CeUpcomingComponent,
+    CeAlltimeFavComponent,
+    CeArchivedComponent,
+    BootcampUpcomingComponent,
+    BootcampArchivedComponent,
+    BootcampAlltimeFavComponent,
+    WorkshopArchivedComponent,
+    WorkshopAlltimeFavComponent,
+    WorkshopUpcomingComponent,
   
 
   ],

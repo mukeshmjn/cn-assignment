@@ -1,6 +1,9 @@
 <div class="row container">
 
     <div class="col-10">
+      <div *ngIf="eventsData.length<1" class="no-data">
+        No events found with the selected tags
+                </div>
       <div class="row container">
       <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;">
         <!-- <mat-card-header>

@@ -92,7 +92,7 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
     //  skipLocationChange: true
  
     });
-    this.ngOnInit();
+    // this.ngOnInit();
   }
 
   tabChange(event){

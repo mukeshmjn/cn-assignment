@@ -3,12 +3,13 @@ import { EventService } from '../../../services/event.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute,Router } from '@angular/router';
 import { JsonpClientBackend } from '@angular/common/http';
+
 @Component({
-  selector: 'app-archived',
-  templateUrl: './archived.component.html',
-  styleUrls: ['./archived.component.scss']
+  selector: 'app-bootcamp-archived',
+  templateUrl: './bootcamp-archived.component.html',
+  styleUrls: ['./bootcamp-archived.component.scss']
 })
-export class ArchivedComponent implements OnInit {
+export class BootcampArchivedComponent implements OnInit {
 
   constructor(private evnt: EventService,
     private lodr: NgxSpinnerService,
@@ -42,7 +43,7 @@ export class ArchivedComponent implements OnInit {
   getEventList(){
 debugger
 
-    this.evnt.getEventsList('ALL_EVENTS','Archived',this.tags).subscribe(res=>{
+    this.evnt.getEventsList('BOOTCAMP_EVENT','Archived',this.tags).subscribe(res=>{
       
    
       this.eventsData = res.data.events
@@ -98,6 +99,5 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   tabChange(event){
     debugger
   }
-
 
 }

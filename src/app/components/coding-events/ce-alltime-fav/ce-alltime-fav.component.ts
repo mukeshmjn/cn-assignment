@@ -4,11 +4,11 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute,Router } from '@angular/router';
 import { JsonpClientBackend } from '@angular/common/http';
 @Component({
-  selector: 'app-archived',
-  templateUrl: './archived.component.html',
-  styleUrls: ['./archived.component.scss']
+  selector: 'app-ce-alltime-fav',
+  templateUrl: './ce-alltime-fav.component.html',
+  styleUrls: ['./ce-alltime-fav.component.scss']
 })
-export class ArchivedComponent implements OnInit {
+export class CeAlltimeFavComponent implements OnInit {
 
   constructor(private evnt: EventService,
     private lodr: NgxSpinnerService,
@@ -42,7 +42,7 @@ export class ArchivedComponent implements OnInit {
   getEventList(){
 debugger
 
-    this.evnt.getEventsList('ALL_EVENTS','Archived',this.tags).subscribe(res=>{
+    this.evnt.getEventsList('CODING_EVENT','All Time Favorites',this.tags).subscribe(res=>{
       
    
       this.eventsData = res.data.events
@@ -98,6 +98,4 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   tabChange(event){
     debugger
   }
-
-
 }
