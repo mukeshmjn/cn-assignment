@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angulartest-9fc34": {
+      "hosting": {
+        "Cn-assignment": [
+          "angulartest-9fc34"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cnevents-17cfd"
+  }
+}

@@ -125,6 +125,10 @@
               "devServerTarget": "Cn-assignment:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

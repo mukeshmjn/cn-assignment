@@ -30,6 +30,8 @@ import { WorkshopArchivedComponent } from './components/workshops/workshop-archi
 import { WorkshopAlltimeFavComponent } from './components/workshops/workshop-alltime-fav/workshop-alltime-fav.component';
 import { WorkshopUpcomingComponent } from './components/workshops/workshop-upcoming/workshop-upcoming.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +68,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDividerModule,
     NgxSpinnerModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'cn-events')
   ],
   providers: [],
   bootstrap: [AppComponent]
