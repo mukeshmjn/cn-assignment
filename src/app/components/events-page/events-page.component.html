@@ -4,80 +4,80 @@
             <mat-tab label="All Events" > 
                 <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                     <mat-tab label="Upcoming row" > 
-                      <app-upcoming  *ngIf="subtabIndex==0"> 
+                      <app-upcoming  *ngIf="subtabIndex==0 && selectedIndex==0"> 
                         </app-upcoming>
                     </mat-tab>
                     <mat-tab label="Archived" >
-                  <app-archived *ngIf="subtabIndex==1">
+                  <app-archived *ngIf="subtabIndex==1 && selectedIndex==0">
 
                   </app-archived>
                     </mat-tab>
                     <mat-tab label="All Time Favorites" > 
-                    <app-alltime-fav *ngIf="subtabIndex==2"></app-alltime-fav>  
+                    <app-alltime-fav *ngIf="subtabIndex==2 && selectedIndex==0"></app-alltime-fav>  
                     </mat-tab>
                   </mat-tab-group>
              </mat-tab>
             <mat-tab label="Webinars" >
                 <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                   <mat-tab label="Upcoming row" > 
-                    <app-webi-upcoming *ngIf="subtabIndex==0"> 
+                    <app-webi-upcoming *ngIf="subtabIndex==0 && selectedIndex==1"> 
                       </app-webi-upcoming>
                   </mat-tab>
                   <mat-tab label="Archived" > 
-                <app-webi-archived *ngIf="subtabIndex==1">
+                <app-webi-archived *ngIf="subtabIndex==1 && selectedIndex==1">
 
                 </app-webi-archived>
                   </mat-tab>
                   <mat-tab label="All Time Favorites"> 
-                  <app-webi-alltime-fav  *ngIf="subtabIndex==2"></app-webi-alltime-fav>  
+                  <app-webi-alltime-fav  *ngIf="subtabIndex==2 && selectedIndex==1"></app-webi-alltime-fav>  
                   </mat-tab>
                   </mat-tab-group>
                  </mat-tab>
             <mat-tab label="Coding Events">
               <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                 <mat-tab label="Upcoming row" > 
-                  <app-ce-upcoming *ngIf="subtabIndex==0"> 
+                  <app-ce-upcoming *ngIf="subtabIndex==0 && selectedIndex==2"> 
                     </app-ce-upcoming>
                 </mat-tab>
                 <mat-tab label="Archived" > 
-              <app-ce-archived *ngIf="subtabIndex==1">
+              <app-ce-archived *ngIf="subtabIndex==1 && selectedIndex==2">
 
               </app-ce-archived>
                 </mat-tab>
                 <mat-tab label="All Time Favorites"> 
-                <app-ce-alltime-fav  *ngIf="subtabIndex==2"></app-ce-alltime-fav>  
+                <app-ce-alltime-fav  *ngIf="subtabIndex==2 && selectedIndex==2"></app-ce-alltime-fav>  
                 </mat-tab>
                 </mat-tab-group>
                  </mat-tab>
                  <mat-tab label="Bootcamp Events">
                   <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                     <mat-tab label="Upcoming row" > 
-                      <app-bootcamp-upcoming *ngIf="subtabIndex==0"> 
+                      <app-bootcamp-upcoming *ngIf="subtabIndex==0 && selectedIndex==3"> 
                         </app-bootcamp-upcoming>
                     </mat-tab>
                     <mat-tab label="Archived" > 
-                  <app-bootcamp-archived *ngIf="subtabIndex==1">
+                  <app-bootcamp-archived *ngIf="subtabIndex==1 && selectedIndex==3">
     
                   </app-bootcamp-archived>
                     </mat-tab>
                     <mat-tab label="All Time Favorites"> 
-                    <app-bootcamp-alltime-fav  *ngIf="subtabIndex==2"></app-bootcamp-alltime-fav>  
+                    <app-bootcamp-alltime-fav  *ngIf="subtabIndex==2 && selectedIndex==3"></app-bootcamp-alltime-fav>  
                     </mat-tab>
                     </mat-tab-group>
                      </mat-tab>
                      <mat-tab label="Workshop">
                       <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
                         <mat-tab label="Upcoming row" > 
-                          <app-workshop-upcoming *ngIf="subtabIndex==0"> 
+                          <app-workshop-upcoming *ngIf="subtabIndex==0 && selectedIndex==4"> 
                             </app-workshop-upcoming>
                         </mat-tab>
                         <mat-tab label="Archived" > 
-                      <app-workshop-archived *ngIf="subtabIndex==1">
+                      <app-workshop-archived *ngIf="subtabIndex==1 && selectedIndex==4">
         
                       </app-workshop-archived>
                         </mat-tab>
                         <mat-tab label="All Time Favorites"> 
-                        <app-workshop-upcoming  *ngIf="subtabIndex==2"></app-workshop-upcoming>  
+                        <app-workshop-upcoming  *ngIf="subtabIndex==2 && selectedIndex==4"></app-workshop-upcoming>  
                         </mat-tab>
                         </mat-tab-group>
                          </mat-tab>

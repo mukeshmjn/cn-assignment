@@ -1,20 +1,12 @@
 <div class="row container">
 
   <div class="col-10">
-    <div *ngIf="eventsData.length<1" class="no-data">
-      No events found with the selected tags
+    <div *ngIf="eventsData?.length==0" class="no-data">
+      No events found
               </div>
     <div class="row container">
     <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;" [hidden]="!event.cover_picture">
-      <!-- <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header> -->
-     
-        <img mat-card-image class="event-img" src="{{event.cover_picture}}" alt="Photo of a Shiba Inu">
-   
-     
+        <img mat-card-image class="event-img" src="{{event.cover_picture}}" alt="Photo of a Shiba Inu"> 
       <mat-card-content>
         <p>
        <strong>  {{event.name}}
@@ -45,7 +37,7 @@
         </div>
     
           <mat-divider ></mat-divider>
-          <div class="open" >
+          <div class="open" *ngIf="(event.end_time*1000)> nowDate">
             <mat-icon  class="Blink" style="color: #fa7328">
               fiber_manual_record
               </mat-icon>Registrations <strong>open</strong> till <strong>{{event.end_time *1000| date:'dd MMM, h:mm a'}}</strong>
@@ -79,21 +71,13 @@
         </div>
        
       </mat-card-content>
-      <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions> -->
+
     </mat-card> 
 
-    <div *ngIf="eventsData">
+    <div *ngIf="eventsData?.length>0">
       <button mat-raised-button  class="col-1" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount" class="pagi-btn">
         <mat-icon aria-hidden="false" aria-label="Example home icon" >chevron_right</mat-icon></button>
-        <!-- <mat-form-field appearance="outline">
-          <mat-label>Outline form field</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field> -->
+
         <input type="text" class="form-control col-2" placeholder="pageno" [(ngModel)]="currpage" (change)="manualInput()" [disabled]="currpage==1||currpage==pageCount" aria-label="pageno" aria-describedby="basic-addon1" style="width: 10%;float: right;">
         <button mat-raised-button class="pagi-btn" class="col-1" style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
           <mat-icon aria-hidden="false" aria-label="Example home icon">chevron_left</mat-icon></button>

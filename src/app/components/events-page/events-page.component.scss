@@ -51,6 +51,14 @@ body{
     text-decoration: none;
 }
 
+::ng-deep .mat-tab-label .mat-tab-label-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 22px;
+}
+
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
     background-color: white
 }

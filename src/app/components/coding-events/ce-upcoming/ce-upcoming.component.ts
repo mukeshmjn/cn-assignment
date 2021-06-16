@@ -17,7 +17,9 @@ export class CeUpcomingComponent implements OnInit {
     ) { }
     tags:any;
     eventsData:any;
-    offset:number = 0
+    showHiddenTags=true;
+    offset:number = 0;
+    nowDate= Date.now();
     eventTagsData:any;
     eventsPayload:any=[];
     currpage:any=1;
@@ -25,7 +27,7 @@ export class CeUpcomingComponent implements OnInit {
     showOrange:boolean[] =[false]
 
   ngOnInit() {
-    debugger
+    
     this.lodr.show();
     this.activtedRoute.queryParams.subscribe(params => {
 
@@ -43,7 +45,7 @@ export class CeUpcomingComponent implements OnInit {
   }
 
   getEventList(){
-debugger
+
 
     this.evnt.getEventsList('CODING_EVENT','Upcoming',this.tags).subscribe(res=>{
       
@@ -53,7 +55,7 @@ debugger
   }
 
   getEvntTags(){
-    debugger
+    
     this.evnt.getEventTags().subscribe(res=>{
       
       this.eventTagsData = res.data.tags
@@ -75,7 +77,7 @@ debugger
   }
 
   showOrangeorN(i){
-debugger
+
 
 
 if(this.eventsPayload.length!=0)
@@ -99,11 +101,11 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   }
 
   tabChange(event){
-    debugger
+    
   }
 
   pageUp(){
-    debugger
+    
     this.currpage+=1;
     this.offset+=20;
     this.getEventList1();
@@ -125,7 +127,7 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   }
 
   getEventList1(){
-    debugger
+    
     
         this.evnt.getEventsList1('CODING_EVENT','Upcoming',this.tags,this.offset).subscribe(res=>{
           
@@ -136,6 +138,8 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
         })
       }
     
-
+      showHiddenrows(){
+        this.showHiddenTags = !this.showHiddenTags;
+      }
 
 }

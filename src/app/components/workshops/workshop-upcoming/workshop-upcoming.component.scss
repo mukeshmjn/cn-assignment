@@ -50,3 +50,71 @@ body{
     text-decoration: none;
 }
 
+.open{
+    position: absolute;
+    font-size: 12px;
+    color: #121212;
+    background: #fff;
+    padding: 0px 13px;
+    border-radius: 2px;
+    top: 110px;
+    right: 7px;
+    box-shadow: 0 1px 11px 0 rgb(0 0 0 / 11%);
+}
+
+// ::ng-deep .mat-tab-label-active {
+//     color: black !important;
+//     font-weight: bold;
+//     background-color: orange;
+//   }
+
+//   ..mat-tab-group.mat-primary .mat-ink-bar{
+//     height:8px;
+// }
+
+.event-img{
+height: 140px;
+}
+
+// .mat-card-image:first-child {
+//     margin-top: -16px;
+//     border-top-left-radius: inherit;
+//     border-top-right-radius: inherit;
+//     height: 140px !important;
+// }
+
+.pagi-btn{
+    color: white;
+    background-color: #fc9d69;
+}
+
+.show-tags{
+    color: #fa7328;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Blink {
+    animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+    height: 7px;
+    width: 18px;
+    top: 3px;
+    padding-top: 0px;
+    font-size: 16px;
+}
+
+@keyframes blinker {  
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+
+.no-data{
+    text-align: center;
+    font-weight: 700;
+    font-size:24px;
+    margin-top: 20px;
+
+}

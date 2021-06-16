@@ -15,21 +15,25 @@ export class EventsPageComponent implements OnInit {
     private activtedRoute: ActivatedRoute,
     private router: Router
     ) { }
-    selectedIndex:any=0
-    subtabIndex:any =0;
+    selectedIndex
+    subtabIndex
   eventsData:any;
   eventTagsData:any;
   showOrange:boolean[] =[false]
   ngOnInit() {
     this.selectedIndex;
     this.subtabIndex;
-    debugger
+    
     this.activtedRoute.queryParams.subscribe(params => {
-      debugger;
+      ;
       if(params['tab']){
       this.selectedIndex = params['tab'];
       this.subtabIndex = params['subtab'];
-      debugger}
+      }
+      else{
+        this.selectedIndex = 0;
+        this.subtabIndex =0;
+      }
       console.log(params);
     })
     // this.lodr.show();
@@ -65,11 +69,11 @@ export class EventsPageComponent implements OnInit {
     this.subtabIndex = 0;
     this.router.navigate(['/events'],
     {queryParams: {tab:this.selectedIndex,subtab:this.subtabIndex}});
-    debugger
+    
   }
 
   subtabChange(event){
-  debugger
+  
   // if(event)
   this.subtabIndex=event
   this.router.navigate(['/events'],

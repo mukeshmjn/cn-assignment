@@ -20,7 +20,7 @@ export class AlltimeFavComponent implements OnInit {
     eventsData:any;
     showHiddenTags=true;
    // myMoment: moment.Moment
-    nowDate: moment.Moment
+    nowDate= Date.now();
     moment: any = moment;
     offset:number = 0
     eventTagsData:any;
@@ -30,7 +30,7 @@ export class AlltimeFavComponent implements OnInit {
     showOrange:boolean[] =[false]
 
   ngOnInit() {
-    debugger
+    
     this.lodr.show();
     this.activtedRoute.queryParams.subscribe(params => {
 
@@ -48,27 +48,19 @@ export class AlltimeFavComponent implements OnInit {
   }
 
   getEventList(){
-debugger
+
 
     this.evnt.getEventsList('ALL_EVENTS','All Time Favorites',this.tags).subscribe(res=>{
       
    
       this.eventsData = res.data.events
-    //  // let myMoment: moment.Moment = moment(new Date());
-    // //  console.log('date:',myMoment)
-    //   this.eventsData.forEach(cc=>{
-    //     // let myMoment: moment.Moment = moment(cc.end_time);
-    //     // console.log('date:',myMoment)
-    //      cc.end_time = String(cc.end_time)
-    //    console.log('date',cc.end_time,typeof cc.end_time,)
-    //   })
       this.pageCount = res.data.page_count;
       this.lodr.hide();
     })
   }
 
   getEvntTags(){
-    debugger
+    
     this.evnt.getEventTags().subscribe(res=>{
       
       this.eventTagsData = res.data.tags
@@ -90,7 +82,7 @@ debugger
   }
 
   showOrangeorN(i){
-debugger
+
 
 
 if(this.eventsPayload.length!=0)
@@ -114,11 +106,11 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   }
 
   tabChange(event){
-    debugger
+    
   }
 
   pageUp(){
-    debugger
+    
     this.currpage+=1;
     this.offset+=20;
     this.getEventList1();
@@ -140,7 +132,7 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
   }
 
   getEventList1(){
-    debugger
+    
     
         this.evnt.getEventsList1('ALL_EVENTS','All Time Favorites',this.tags,this.offset).subscribe(res=>{
           
