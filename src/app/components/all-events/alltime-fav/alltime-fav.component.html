@@ -21,24 +21,24 @@
       </strong> 
         </p>
         <div class="row" style="color: #757575;">
-          <div class="col-4">
+          <div class="col-sm-4">
             Starts On
           </div>
-          <div class="col-4">
+          <div class="col-sm-4">
             Entry Fee
           </div>
-          <div class="col-4">
+          <div class="col-sm-4">
             Venue
           </div>
         </div>
         <div class="row" style="color: black;">
-          <div class="col-4">
-            {{event.start_time|date: ' h:mm a, d MMM y'}}
+          <div class="col-sm-4">
+            {{event.start_time*1000|date: ' h:mm a, d MMM y'}}
           </div>
-          <div class="col-4">
+          <div class="col-sm-4">
             {{event.currency}} {{event.fees}}
           </div>
-          <div class="col-4">
+          <div class="col-sm-4">
             {{event.venue}}
           </div>
         
@@ -48,7 +48,7 @@
           <div class="open" >
             <mat-icon  class="Blink" style="color: #fa7328">
               fiber_manual_record
-              </mat-icon>LIVE   Registrations open till {{event.end_time| date:'dd/MMM/yy'}}
+              </mat-icon>Registrations <strong>open</strong> till <strong>{{event.end_time *1000| date:'dd MMM, h:mm a'}}</strong>
           </div>
         
         <div class="row shortdesc p-2">
