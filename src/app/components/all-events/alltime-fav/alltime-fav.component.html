@@ -5,13 +5,16 @@
       No events found with the selected tags
               </div>
     <div class="row container">
-    <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;">
+    <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;" [hidden]="!event.cover_picture">
       <!-- <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Shiba Inu</mat-card-title>
         <mat-card-subtitle>Dog Breed</mat-card-subtitle>
       </mat-card-header> -->
-      <img mat-card-image src="{{event.cover_picture}}" alt="Photo of a Shiba Inu" >
+     
+        <img mat-card-image class="event-img" src="{{event.cover_picture}}" alt="Photo of a Shiba Inu">
+   
+     
       <mat-card-content>
         <p>
        <strong>  {{event.name}}
@@ -42,7 +45,11 @@
         </div>
     
           <mat-divider ></mat-divider>
-
+          <div class="open" >
+            <mat-icon  class="Blink" style="color: #fa7328">
+              fiber_manual_record
+              </mat-icon>LIVE   Registrations open till {{event.end_time| date:'dd/MMM/yy'}}
+          </div>
         
         <div class="row shortdesc p-2">
           {{event.short_desc}}
@@ -78,8 +85,8 @@
       </mat-card-actions> -->
     </mat-card> 
 
-    <div >
-      <button mat-raised-button color="primary" class="col-1" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount">
+    <div *ngIf="eventsData">
+      <button mat-raised-button  class="col-1" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount" class="pagi-btn">
         <mat-icon aria-hidden="false" aria-label="Example home icon" >chevron_right</mat-icon></button>
         <!-- <mat-form-field appearance="outline">
           <mat-label>Outline form field</mat-label>
@@ -88,7 +95,7 @@
           <mat-hint>Hint</mat-hint>
         </mat-form-field> -->
         <input type="text" class="form-control col-2" placeholder="pageno" [(ngModel)]="currpage" (change)="manualInput()" [disabled]="currpage==1||currpage==pageCount" aria-label="pageno" aria-describedby="basic-addon1" style="width: 10%;float: right;">
-        <button mat-raised-button color="primary" class="col-1" style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
+        <button mat-raised-button class="pagi-btn" class="col-1" style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
           <mat-icon aria-hidden="false" aria-label="Example home icon">chevron_left</mat-icon></button>
     </div>
     
@@ -101,9 +108,14 @@
     TAGS
   </span>
 </div>
-<div class="row " *ngFor="let tag of eventTagsData;index as i" (click)="showOrangeorN(i)" [ngClass]="showOrange[i] ? 'event-tags-orange' : 'event-tags-grey'">
-{{tag}}
+<div class="row " *ngFor="let tag of eventTagsData;index as i" (click)="showOrangeorN(i)" [ngClass]="showOrange[i] ? 'event-tags-orange' : 'event-tags-grey'" [hidden]="!((i+1<=12)||!showHiddenTags)">
+  {{tag}}
 </div>
+<span (click)="showHiddenrows()" class="show-tags" *ngIf="showHiddenTags">
+See 10 more tags
+</span>
+
 </div>
- 
+
   </div>   
+

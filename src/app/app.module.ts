@@ -32,6 +32,7 @@ import { WorkshopUpcomingComponent } from './components/workshops/workshop-upcom
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { HeaderBannerComponent } from './components/header-banner/header-banner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { AngularFireModule } from '@angular/fire';
     WorkshopArchivedComponent,
     WorkshopAlltimeFavComponent,
     WorkshopUpcomingComponent,
+    HeaderBannerComponent,
   
 
   ],

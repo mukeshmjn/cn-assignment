@@ -32,7 +32,7 @@ export class EventsPageComponent implements OnInit {
       debugger}
       console.log(params);
     })
-    this.lodr.show();
+    // this.lodr.show();
   //  this.getEventList();
    this.getEvntTags();
   }
@@ -49,7 +49,7 @@ export class EventsPageComponent implements OnInit {
     this.evnt.getEventTags().subscribe(res=>{
       console.log(res);
       this.eventTagsData = res.data.tags
-      this.lodr.hide();
+      // this.lodr.hide();
     })
   }
 

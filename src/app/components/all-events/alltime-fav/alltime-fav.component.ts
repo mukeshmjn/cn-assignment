@@ -3,7 +3,7 @@ import { EventService } from '../../../services/event.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute,Router } from '@angular/router';
 import { JsonpClientBackend } from '@angular/common/http';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-alltime-fav',
   templateUrl: './alltime-fav.component.html',
@@ -18,6 +18,10 @@ export class AlltimeFavComponent implements OnInit {
     ) { }
     tags:any;
     eventsData:any;
+    showHiddenTags=true;
+   // myMoment: moment.Moment
+    nowDate: moment.Moment
+    moment: any = moment;
     offset:number = 0
     eventTagsData:any;
     eventsPayload:any=[];
@@ -50,7 +54,16 @@ debugger
       
    
       this.eventsData = res.data.events
+    //  // let myMoment: moment.Moment = moment(new Date());
+    // //  console.log('date:',myMoment)
+    //   this.eventsData.forEach(cc=>{
+    //     // let myMoment: moment.Moment = moment(cc.end_time);
+    //     // console.log('date:',myMoment)
+    //      cc.end_time = String(cc.end_time)
+    //    console.log('date',cc.end_time,typeof cc.end_time,)
+    //   })
       this.pageCount = res.data.page_count;
+      this.lodr.hide();
     })
   }
 
@@ -72,7 +85,7 @@ debugger
       this.showOrange[this.eventTagsData.indexOf(tagsEv)] = true;
     }
     }
-      this.lodr.hide();
+    //  this.lodr.hide();
     })
   }
 
@@ -138,6 +151,8 @@ console.log(this.eventsPayload.indexOf(this.eventTagsData[i]));
         })
       }
 
-
+      showHiddenrows(){
+        this.showHiddenTags = !this.showHiddenTags;
+      }
 
 }
