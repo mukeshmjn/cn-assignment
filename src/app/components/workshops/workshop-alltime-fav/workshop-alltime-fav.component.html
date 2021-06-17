@@ -29,7 +29,7 @@
               {{event.start_time*1000|date: ' h:mm a, d MMM y'}}
             </div>
             <div class="col-sm-4">
-              {{event.currency}} {{event.fees}}
+              {{event.fees!=0?event.currency:''}} {{event.fees!=0?event.fees:'Free'}}
             </div>
             <div class="col-sm-4">
               {{event.venue}}
@@ -63,7 +63,7 @@
             border-radius: 50%;">
                </div>
                <div class="float-right" style="float: right;">
-                 <img src="assets/reg-btn.png" alt="fdd" style="height: 30px;margin-right: -17px;
+                 <img src="assets/reg-btn.png" alt="fdd" style="height: 30px;margin-right: -13px;
                ">
                </div>
         </div>
@@ -78,11 +78,15 @@
     </mat-card> 
 
     <div *ngIf="eventsData?.length>0">
-      <button mat-raised-button  class="col-1" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount" class="pagi-btn">
+      <button mat-raised-button  class="col-1 pagi-btn" style="float: right;" (click)="pageUp()"[disabled]="currpage==pageCount" >
         <mat-icon aria-hidden="false" aria-label="Example home icon" >chevron_right</mat-icon></button>
 
-        <input type="text" class="form-control col-2" placeholder="pageno" [(ngModel)]="currpage" (change)="manualInput()" [disabled]="currpage==1||currpage==pageCount" aria-label="pageno" aria-describedby="basic-addon1" style="width: 10%;float: right;">
-        <button mat-raised-button class="pagi-btn" class="col-1" style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
+        <span style="float: right;    padding: 9px;
+        font-size: 16px;">of {{pageCount}}</span>
+        <input type="text" class="form-control col-2" placeholder="pageno" [(ngModel)]="currpage" (change)="manualInput()" [disabled]="pageCount==1||currpage==pageCount" aria-label="pageno" aria-describedby="basic-addon1" style="width: 10%;float: right;">
+        <span style="float: right;    padding: 9px;
+        font-size: 16px;">Page</span>
+        <button mat-raised-button class="col-1 pagi-btn"  style="float: right;" (click)="pageDown()" [disabled]="currpage==1">
           <mat-icon aria-hidden="false" aria-label="Example home icon">chevron_left</mat-icon></button>
     </div>
     
