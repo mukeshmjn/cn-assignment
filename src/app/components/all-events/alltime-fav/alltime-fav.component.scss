@@ -116,6 +116,52 @@ height: 140px;
     margin-top: 20px;
 }
 
+.row > * {
+    flex-shrink: 0;
+    width: 1;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+@media only screen and (max-width: 1024px){
+
+.inner{
+    margin-left: -51px;
+    width: 373%;
+}
+
+.example-card[_ngcontent-nsr-c45] {
+    max-width: 90%;
+    margin: auto;
+    cursor: pointer;
+    width: 48%;
+}
+.open {
+    position: absolute;
+    font-size: 11px;
+    color: #121212;
+    background: #fff;
+    padding: 0px 13px;
+    border-radius: 2px;
+    top: 110px;
+    right: 7px;
+    box-shadow: 0 1px 11px 0 rgb(0 0 0 / 11%);
+}
+
+.row > * {
+    flex-shrink: 0;
+        width: unset;
+        max-width: 84%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+
+}
+
 
 
 

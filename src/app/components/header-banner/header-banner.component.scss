@@ -3,3 +3,11 @@
     height: 35%;
     margin-left: 104px;
 }
+
+@media only screen and (max-width: 1024px){
+.banner {
+    width: 85%;
+    height: 35%;
+    margin-left: 26px;
+}
+}

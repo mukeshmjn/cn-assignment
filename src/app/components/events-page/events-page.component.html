@@ -3,7 +3,7 @@
         <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="tabChange($event)" [selectedIndex]="selectedIndex" >
             <mat-tab label="All Events" > 
                 <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
-                    <mat-tab label="Upcoming row" > 
+                    <mat-tab label="Upcoming" > 
                       <app-upcoming  *ngIf="subtabIndex==0 && selectedIndex==0"> 
                         </app-upcoming>
                     </mat-tab>
@@ -19,7 +19,7 @@
              </mat-tab>
             <mat-tab label="Webinars" >
                 <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
-                  <mat-tab label="Upcoming row" > 
+                  <mat-tab label="Upcoming" > 
                     <app-webi-upcoming *ngIf="subtabIndex==0 && selectedIndex==1"> 
                       </app-webi-upcoming>
                   </mat-tab>
@@ -35,7 +35,7 @@
                  </mat-tab>
             <mat-tab label="Coding Events">
               <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
-                <mat-tab label="Upcoming row" > 
+                <mat-tab label="Upcoming" > 
                   <app-ce-upcoming *ngIf="subtabIndex==0 && selectedIndex==2"> 
                     </app-ce-upcoming>
                 </mat-tab>
@@ -51,7 +51,7 @@
                  </mat-tab>
                  <mat-tab label="Bootcamp Events">
                   <mat-tab-group [selectedIndex]="subtabIndex"  (selectedIndexChange)="subtabChange($event)">
-                    <mat-tab label="Upcoming row" > 
+                    <mat-tab label="Upcoming" > 
                       <app-bootcamp-upcoming *ngIf="subtabIndex==0 && selectedIndex==3"> 
                         </app-bootcamp-upcoming>
                     </mat-tab>
