@@ -4,7 +4,7 @@
     <div *ngIf="eventsData?.length==0" class="no-data">
       No events found
               </div>
-    <div class="row container">
+    <div class="row container inner">
     <mat-card class="example-card col-sm-6 m-2" *ngFor="let event of eventsData" style="    width: 48%;" [hidden]="!event.cover_picture">
         <img mat-card-image class="event-img" src="{{event.cover_picture}}" alt="Photo of a Shiba Inu"> 
       <mat-card-content>
@@ -12,30 +12,33 @@
        <strong>  {{event.name}}
       </strong> 
         </p>
-        <div class="row" style="color: #757575;">
-          <div class="col-sm-4">
-            Starts On
+        <div >
+          <div class="row" style="color: #757575;">
+            <div class="col-sm-4" >
+              Starts On
+            </div>
+            <div class="col-sm-4">
+              Entry Fee
+            </div>
+            <div class="col-sm-4">
+              Venue
+            </div>
           </div>
-          <div class="col-sm-4">
-            Entry Fee
+          <div class="row" style="color: black;">
+            <div class="col-sm-4">
+              {{event.start_time*1000|date: ' h:mm a, d MMM y'}}
+            </div>
+            <div class="col-sm-4">
+              {{event.currency}} {{event.fees}}
+            </div>
+            <div class="col-sm-4">
+              {{event.venue}}
+            </div>
+          
           </div>
-          <div class="col-sm-4">
-            Venue
-          </div>
+      
         </div>
-        <div class="row" style="color: black;">
-          <div class="col-sm-4">
-            {{event.start_time*1000|date: ' h:mm a, d MMM y'}}
-          </div>
-          <div class="col-sm-4">
-            {{event.currency}} {{event.fees}}
-          </div>
-          <div class="col-sm-4">
-            {{event.venue}}
-          </div>
-        
-        </div>
-    
+       
           <mat-divider ></mat-divider>
           <div class="open" *ngIf="(event.end_time*1000)> nowDate">
             <mat-icon  class="Blink" style="color: #fa7328">
